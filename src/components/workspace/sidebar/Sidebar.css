@@ -1,0 +1,128 @@
+.sidebar {
+    display: flex;
+    flex-direction: column;
+}
+.sidebar__header {
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid rgb(82,38,83);
+    margin-bottom: 1rem;;
+}
+.sidebar__header:hover {
+    opacity: 0.9;
+    background: var(--primary-color-dark);
+}
+
+.sidebar__header__button .workspace__title {
+    width: 100%;
+    min-width: 15rem;
+    overflow: hidden;
+}
+
+.sidebar__header__button > .MuiButton-startIcon {
+    margin-right: 0;
+}
+
+.sidebar__header__button > .MuiButton-containedSecondary {
+    background-color: var(--primary-color);
+    color: var(--primary-color);
+    padding: .8rem;
+    font-size: 1.8rem;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.sidebar__header__button .workspace__title> .MuiButton-label {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    font-size: 1.5rem;
+    color: #fff;
+    text-transform: capitalize;
+}
+
+.sidebar__header .workspace__title:hover {
+    border-radius: 0;
+    opacity: 0.9;
+    background-color: var(--primary-color-dark);
+    color: var(--primary-color);
+    box-shadow: none;
+}
+
+.new-message.MuiIconButton-root {
+    background-color: #fff;
+    color: var(--primary-color);
+}
+.new-message.MuiIconButton-root:hover {
+    background-color:#fff;
+    border-radius: 999px;
+}
+
+.sidebarOption {
+    padding-left: 1rem;
+}
+
+.sidebarOption,
+.sidebarTreeOptions__root,
+.sidebarTreeOptions__view {
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.sidebarTreeOptions__view > .MuiIconButton-root {
+    padding: 0.7rem;
+}
+
+.sidebarOption h3,
+.sidebarTreeOptions__root {
+    font-weight: 400;
+    color: #d8b4d8;
+}
+
+
+.sidebarOption__icon,
+.sidebarTreeOptions #icon {
+    color: #d8b0d8;
+}
+
+.sidebarOption:hover {
+    opacity: 0.9;
+    background-color: var(--primary-color-dark);
+}
+
+.sidebarOption__title{
+    padding: 0 1rem;
+} 
+
+.sidebarOption__hash {
+    padding-right: 1rem;
+}
+
+.sidebarTreeOptions__root {
+    display: flex;;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.sidebarTreeOptions__root {
+    justify-content: space-between;
+}
+
+.sidebarTreeOptions #icon {
+    font-size: 2.2rem;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+
+.sidebarTreeOptions {
+    justify-content: space-between;
+}
+
+.sidebarTreeOptions__item > div {
+    padding-left: 2.5rem;
+}

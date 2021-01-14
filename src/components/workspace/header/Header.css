@@ -1,0 +1,51 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: var(--primary-color-dark);
+    color: #fff;
+}
+
+.header__left {
+    flex: 0.3;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 16px;
+}
+
+.header__left .user__access-time > .MuiSvgIcon-root,
+.header__search .user__help > .MuiSvgIcon-root {
+    font-size: 2rem;
+}
+
+.header__search {
+    min-width: 30rem;
+    flex: 0.4;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header__search .user__search {
+    width: 100%;
+}
+
+.header__search .user__help {
+    padding-left: 1.6rem;
+}
+
+.header__right {
+    flex: 0.3;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 16px;
+    padding-left: 32px;
+}
+
+.user__profile > .MuiAvatar-root {
+    width: 2.8rem;
+    height: 2.8rem;
+}

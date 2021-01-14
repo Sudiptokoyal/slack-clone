@@ -1,0 +1,23 @@
+.ws {
+    position: relative;
+    display: grid;
+    width: 100vw;
+    height: 100vh;
+    grid-template-rows: 4rem 1fr;
+    grid-template-columns: 1fr;
+}
+
+.ws__main {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+}
+
+.ws__sidebar {
+    max-width: 30vw;
+    min-width: 180px;
+    position: relative;
+    color: #fff;
+    background-color:var(--primary-color);
+}
+
