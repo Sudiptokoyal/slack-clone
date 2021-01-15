@@ -14,10 +14,13 @@
 }
 
 .ws__sidebar {
-    max-width: 30vw;
-    min-width: 180px;
     position: relative;
+    flex: 0.2;
     color: #fff;
     background-color:var(--primary-color);
+}
+
+.ws__chat{
+    flex: 0.8;
 }
 

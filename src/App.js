@@ -1,3 +1,4 @@
+// import {Suspense} from 'react';
 import './App.css';
 import {
   BrowserRouter as Router
@@ -7,9 +8,9 @@ import AppRouter from './AppRouter';
 function App() {
   return (
     <div className="App">
-      <Router>
-        <AppRouter />
-      </Router>
+ 		<Router>
+            <AppRouter />
+        </Router>
     </div>
   );
 }

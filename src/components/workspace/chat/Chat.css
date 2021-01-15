@@ -1,0 +1,49 @@
+.chat {
+    width: 100%;
+    position: relative;
+}
+
+.chat__header {
+    display: flex;
+    padding: 1rem;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #c7c5c5;
+}
+
+.chat__header__left {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chat__header__left p {
+    padding-right: 1rem;
+    font-size: 1.4rem;
+}
+
+.chat__header__left > .MuiButtonBase-root {
+    padding: .5rem;
+}
+
+.chat__header__left > .MuiSvgIcon-root {
+    font-size: 2rem !important;
+}
+
+.chat__header__right {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chat__header__right > .MuiButtonBase-root {
+    padding: .7rem;
+}
+
+.chat__header__right > .MuiSvgIcon-root {
+    font-size: 2.5rem;
+}
+
+.chat__header__members {
+    padding-right: 1.5rem;
+}

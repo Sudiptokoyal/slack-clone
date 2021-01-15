@@ -1,4 +1,6 @@
 import React, {useState, useEffect} from 'react';
+// import {Link} from 'react-router-dom';
+
 import './Sidebar.css';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
@@ -14,11 +16,12 @@ import db from '../../../firebase.config';
 
 
 function Sidebar() {
-    const [channels, setChannel] = useState([]);
+    const [channels, setChannels] = useState([]);
+    const [selectedChannel, setSelectedChannel] = useState('');
 
     const getChannels = () => {
         db.collection('channels').onSnapshot(snapshot => {
-            setChannel(
+            setChannels(
                 snapshot.docs.map(doc => ({
                     id: doc.id,
                     name: doc.data().name
@@ -50,11 +53,14 @@ function Sidebar() {
             <SidebarOption Icon={QuestionAnswerRoundedIcon} title="All DMs" />
             <SidebarOption Icon={MoreVertIcon} title="More" />
             <SidebarTreeOptions title="Channels">
-                {channels.map(channel =>                    
-                     <SidebarOption title={channel.name} color="white" key={channel.id} />
+                {channels.map(channel =>  
+
+                     <SidebarOption title={channel.name} color="white" key={channel.id} onClick={() => setSelectedChannel(channel.name)} />
                      )}
                 <SidebarOption Icon={AddRoundedIcon} title="More" />
             </SidebarTreeOptions>
+            {selectedChannel &&  <SidebarOption title={selectedChannel} />}
+
             <SidebarTreeOptions title="Direct Messages">
                 <SidebarOption title="User Name (you)" color="white" />
                 <SidebarOption Icon={AddRoundedIcon} title="Add teammates" />
