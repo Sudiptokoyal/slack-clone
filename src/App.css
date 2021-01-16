@@ -1,6 +1,69 @@
-input {
-  border: none;
-  border-radius: 3px;
-  padding: .7rem 1rem;
-  width: 100%;
+.generic__form {
+	position: relative;
 }
+
+.generic__form__wrapper  {
+    min-height: 28px;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	padding: .7rem .5rem;
+}
+
+.generic__form  .generic__form--label {
+	font-size: 1.5rem !important;
+	font-weight: 500;
+	color: #1c1c1c;
+	padding-bottom: 0.5rem;
+}
+
+.generic__form--optional-label {
+	color: #777 !important;
+	text-transform: lowercase;
+}
+
+.generic__form  .generic__form--input {      
+	border: none;
+	border-radius: 4px;
+	padding: .7rem 1rem;
+	width: 100%;
+	border: 1px solid #777;
+    transition: border 80ms ease-out,box-shadow 80ms ease-out;
+    display: block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+input:focus {
+    outline: none;
+    --saf-0: rgba(var(--sk_highlight,18,100,163),1);
+    box-shadow: 0 0 0 1px var(--saf-0),0 0 0 5px rgba(29,155,209,.3);
+    border-radius: 4px;
+    border-color: transparent;
+}
+
+/*
+*	Dialog
+*/
+#form-dialog-title > .MuiTypography-h6{
+    font-size: 2.8rem !important;
+	color: #1c1c1c;
+    font-weight: 900;
+    font-family:  -apple-system, BlinkMacSystemFont, 'Segoe UI' !important;
+}
+
+#dialog-content-text.MuiTypography-body1 {
+	font-size: 1.4rem !important;
+	color: #333;
+}
+
+.MuiDialogActions-root  {
+	padding: .8rem 2.4rem !important;
+    display: flex;
+    justify-content: space-between !important;
+    align-items: center;
+}
+.MuiDialogActions-root Button.MuiButton-root {
+    font-size: 1.2rem;
+} 
