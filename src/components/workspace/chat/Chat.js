@@ -11,12 +11,15 @@ import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import Divider from "@material-ui/core/Divider";
 import ListItemText from "@material-ui/core/ListItemText";
+import MoreVertIcon from "@material-ui/icons/MoreVert";
 import ListItemAvatar from "@material-ui/core/ListItemAvatar";
+import ListItemSecondaryAction from "@material-ui/core/ListItemSecondaryAction";
 import Typography from "@material-ui/core/Typography";
 import db from "../../../firebase.config";
 function Chat() {
 	const { channelID } = useParams();
 	const [channelInfo, setChannelInfo] = useState(null);
+	const [chat, setChat] = useState(null);
 
 	useEffect(() => {
 		// effect
@@ -26,7 +29,15 @@ function Chat() {
 				setChannelInfo(snapshot.data());
 			});
 
-		console.log(channelInfo);
+		db.collection("channels")
+			.doc(channelID)
+			.collection("chat")
+			.orderBy("timestamp", "asc")
+			.onSnapshot((snapshot) => {
+				setChat(snapshot.docs.map((doc) => doc.data()));
+			});
+		// console.log(channelInfo);
+		console.log(chat);
 		return () => {
 			// cleanup
 		};
@@ -61,26 +72,45 @@ function Chat() {
 			</div>
 			<div className="chat__body">
 				<List>
-					<ListItem alignItems="flex-start">
-						<ListItemAvatar>
-							<Avatar alt="Remy Sharp" src="" />
-						</ListItemAvatar>
-						<ListItemText
-							primary="Brunch this weekend?"
-							secondary={
-								<React.Fragment>
-									<Typography
-										component="span"
-										variant="body2"
-										color="textPrimary"
-									>
-										Ali Connors
-									</Typography>
-									{" — I'll be in your neighborhood doing errands this…"}
-								</React.Fragment>
-							}
-						/>
-					</ListItem>
+					{chat &&
+						chat.map((message) => (
+							<ListItem alignItems="flex-start">
+								<ListItemAvatar>
+									<Avatar alt={message?.username} src="" />
+								</ListItemAvatar>
+								<ListItemText
+									primary={
+										<React.Fragment>
+											<Typography component="span" variant="h6" gutterBottom>
+												{message?.username}
+											</Typography>
+											<Typography component="span" variant="h6" gutterBottom>
+												{" "}
+											</Typography>
+											<Typography component="span" variant="body2" gutterBottom>
+												{new Date(message.timestamp.toDate()).toUTCString()}
+											</Typography>
+										</React.Fragment>
+									}
+									secondary={
+										<React.Fragment>
+											<Typography
+												component="span"
+												variant="subtitle1"
+												color="textPrimary"
+											>
+												{message?.message}
+											</Typography>
+										</React.Fragment>
+									}
+								/>
+								<ListItemSecondaryAction>
+									<IconButton aria-label="more option">
+										<MoreVertIcon />
+									</IconButton>
+								</ListItemSecondaryAction>
+							</ListItem>
+						))}
 				</List>
 			</div>
 		</div>

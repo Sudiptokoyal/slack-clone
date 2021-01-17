@@ -1,0 +1,33 @@
+.login {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(226, 226, 226);
+    overflow: hidden;
+}
+
+.login__hero {
+    padding: 10vw;
+    flex-direction: column;
+}
+
+.login__logo,
+.login__hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login__logo > img {
+    width: 20rem;
+    height: 5rem;
+    margin: 0 auto;
+}
+
+.login__hero__title h1, h3 {
+    padding: 1.5rem 0;
+    text-align: center;
+}
