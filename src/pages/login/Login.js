@@ -2,23 +2,33 @@ import React, { useState } from "react";
 import "./Login.css";
 import { Button } from "@material-ui/core";
 import Paper from "@material-ui/core/Paper";
+import { useHistory } from "react-router-dom";
+
+import { useDispatch } from "react-redux";
+import setUser from "../../store/actions/userActions";
+
 import { auth, provider } from "../../firebase.config";
 import GenericSnackbar from "../../components/GenericSnackbar";
 
 function Login() {
 	const [errorMsg, setErrorMsg] = useState(null);
 	const [open, setOpen] = useState(null);
+	const dispatch = useDispatch();
+	const history = useHistory();
 
 	const signIn = () => {
 		auth
 			.signInWithPopup(provider)
 			.then((results) => {
-				console.log(results);
+				if (results && results.hasOwnProperty("additionalUserInfo")) {
+					const userData = results.additionalUserInfo.profile;
+					dispatch(setUser(userData));
+				}
 			})
 			.catch((error) => {
-				const message = JSON.parse(error.message);
-				setErrorMsg(message.error.message);
-				setOpen(true);
+				// const message = JSON.parse(error.message);
+				// setErrorMsg(message.error.message);
+				// setOpen(true);
 			});
 	};
 

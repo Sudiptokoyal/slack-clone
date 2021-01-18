@@ -1,9 +1,11 @@
-import { useState, Fragment } from "react";
+import { useSelector } from "react-redux";
+import { BrowserRouter as Router } from "react-router-dom";
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import "./App.css";
-import { BrowserRouter as Router } from "react-router-dom";
-import AppRouter from "./AppRouter";
+// import { BrowserRouter as Router } from "react-router-dom";
+// import AppRouter from "./AppRouter";
 import Login from "./pages/login/Login";
+import Workspace from "./pages/workspace/Workspace";
 
 const theme = createMuiTheme({
 	typography: {
@@ -25,20 +27,16 @@ const theme = createMuiTheme({
 });
 
 function App() {
-	const [user, setUser] = useState(null);
+	const user = useSelector((state) => state.user);
 
 	return (
 		<MuiThemeProvider theme={theme}>
 			{!user ? (
 				<Login />
 			) : (
-				<Fragment>
-					<div className="App">
-						<Router>
-							<AppRouter />
-						</Router>
-					</div>
-				</Fragment>
+				<Router>
+					<Workspace />
+				</Router>
 			)}
 		</MuiThemeProvider>
 	);

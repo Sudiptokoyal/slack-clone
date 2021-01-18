@@ -47,3 +47,11 @@
 .chat__header__members {
     padding-right: 1.5rem;
 }
+
+.chat__body {
+    height: calc(100vw - 42rem);
+    overflow-y: auto;
+}
+.chat__footer{
+    padding: 1.5rem;
+}

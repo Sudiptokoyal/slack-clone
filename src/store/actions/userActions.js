@@ -1,16 +1,10 @@
 const SET_USER = "SET_USER";
-const RESET_USER = "RESET_USER";
 
-const setUser = () => {
+const setUser = (data) => {
 	return {
 		type: SET_USER,
+		payload: data,
 	};
 };
 
-const resetUser = () => {
-	return {
-		type: RESET_USER,
-	};
-};
-
-export default setUser | resetUser;
+export default setUser;

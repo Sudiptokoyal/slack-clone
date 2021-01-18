@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Snackbar from "@material-ui/core/Snackbar";
 import MuiAlert from "@material-ui/lab/Alert";
 
@@ -9,9 +9,6 @@ function Alert(props) {
 function GenericSnackbar(props) {
 	const { open, duration = 6000, handleClose, message, severity } = props;
 
-	useEffect(() => {
-		console.log(message);
-	}, []);
 	return (
 		<div>
 			<Snackbar open={open} autoHideDuration={duration} onClose={handleClose}>

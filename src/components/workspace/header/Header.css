@@ -32,6 +32,10 @@
     width: 100%;
 }
 
+.header__search .user__search input {
+    min-width: 28vw;
+}
+
 .header__search .user__help {
     padding-left: 1.6rem;
 }
@@ -45,7 +49,8 @@
     padding-left: 32px;
 }
 
-.user__profile > .MuiAvatar-root {
-    width: 2.8rem;
-    height: 2.8rem;
+#user__profile {
+    width: 3rem !important;
+    border-radius: 3px;
+    height: 3rem !important;
 }

@@ -1,23 +1,17 @@
-import { setUser, resetUser } from "../actions";
-
 const initialState = {
 	user: null,
 };
 
-export const userReducer = (state, action) => {
-	console.log(action.type);
-	switch (action.type) {
-		case setUser():
+const userReducer = (state = initialState, actions) => {
+	switch (actions.type) {
+		case "SET_USER":
 			return {
 				...state,
-				user: action.payload,
-			};
-		case resetUser():
-			return {
-				...state,
-				user: initialState,
+				user: actions.payload,
 			};
 		default:
 			return state;
 	}
 };
+
+export default userReducer;
