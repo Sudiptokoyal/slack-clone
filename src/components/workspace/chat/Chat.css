@@ -1,5 +1,6 @@
 .chat {
     width: 100%;
+    height: calc(100vh - 4rem);
     position: relative;
 }
 
@@ -49,9 +50,11 @@
 }
 
 .chat__body {
-    height: calc(100vw - 42rem);
+    height: calc(100vw - 18rem);
     overflow-y: auto;
 }
 .chat__footer{
     padding: 1.5rem;
+    position: absolute;
+    width: 100%;
 }

@@ -6,6 +6,7 @@ import "./Workspace.css";
 import Header from "../../components/workspace/header/Header";
 import Sidebar from "../../components/workspace/sidebar/Sidebar";
 import Chat from "../../components/workspace/chat/Chat";
+import Welcome from "../../components/Welcome";
 
 function Workspace() {
 	return (
@@ -26,8 +27,7 @@ function Workspace() {
 						</div>
 					</Route>
 					<Route path="/">
-						<h1>Welcome to Slack-clone!!</h1>
-						<h3>Hire me</h3>
+						<Welcome />
 					</Route>
 				</Switch>
 			</div>
